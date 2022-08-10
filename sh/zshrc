@@ -1,0 +1,19 @@
+# disable homebrew analytics
+export HOMEBREW_NO_ANALYTICS=1
+
+# custom prompt modified from the default ohmyzsh prompt
+PROMPT=$'\n'
+PROMPT+="%F{cyan}%c%f"
+PROMPT+=$'\n'
+PROMPT+="%(?:%F{green}➜ %f:%F{red}➜ %f)"
+
+# fancy history search using up/down arrows from ohmyzsh
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+
+# custom aliases
+[[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"

@@ -1,0 +1,24 @@
+[submodule "vim/vim/pack/plugins/start/vim-dim"]
+	path = vim/vim/pack/plugins/start/vim-dim
+	url = https://github.com/jeffkreeftmeijer/vim-dim.git
+[submodule "vim/vim/pack/plugins/start/vimwiki"]
+	path = vim/vim/pack/plugins/start/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
+[submodule "vim/vim/pack/plugins/start/vim-vinegar"]
+	path = vim/vim/pack/plugins/start/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar.git
+[submodule "vim/vim/pack/plugins/start/vim-sensible"]
+	path = vim/vim/pack/plugins/start/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule "vim/vim/pack/plugins/start/vim-rsi"]
+	path = vim/vim/pack/plugins/start/vim-rsi
+	url = https://github.com/tpope/vim-rsi.git
+[submodule "vim/vim/pack/plugins/start/vim-surround"]
+	path = vim/vim/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/vim/pack/plugins/start/vim-commentary"]
+	path = vim/vim/pack/plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/vim/pack/plugins/start/vim-fugitive"]
+	path = vim/vim/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git

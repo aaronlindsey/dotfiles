@@ -1,0 +1,87 @@
+set nocompatible
+set secure
+set hidden                  " hide current buffer when opening a new buffer
+set ruler                   " show line/column numbers in the status bar
+set number                  " show line numbers in the margin
+set scrolloff=2             " keep at least 2 lines above/below the cursor when scrolling
+set incsearch               " search as you type
+set ignorecase              " ignore case in search
+set smartcase               " override ignorecase if search pattern contains upper case
+set noswapfile              " disable swap files
+set history=50              " number of :commands to remember
+set shortmess+=I            " disable intro message
+set mouse=a                 " enable mouse integration
+set cursorline              " underline current line
+set cursorlineopt=number    " cursorline only affects line number
+
+" indentation settings
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
+
+" code-completion settings
+set wildmenu
+set wildmode=list:full
+set wildignorecase
+
+" better split shortcuts
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" better split defaults
+set splitbelow
+set splitright
+
+" better copy/paste behavior
+set clipboard^=unnamed,unnamedplus
+vnoremap p "_dP
+
+" better backspace behavior
+set backspace=indent,eol,start
+
+" enable true-color
+" this does not work on Terminal.app for some reason
+" if has('termguicolors')
+"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"   set termguicolors
+" endif
+
+" color scheme settings
+syntax on
+set background=light
+colorscheme dim
+
+" filetype settings
+filetype plugin indent on
+autocmd FileType make setlocal noexpandtab
+
+" treat .tex files as LaTeX
+let g:tex_flavor = "latex"
+
+" vimwiki settings
+let g:vimwiki_global_ext = 0
+let g:vimwiki_auto_chdir = 1
+let g:vimwiki_auto_header = 1
+let g:vimwiki_tags_header = "Tags"
+let g:vimwiki_tags_header_level = 2
+let g:vimwiki_list = [
+\   {
+\       "path": "~/Notes",
+\       "index": "README",
+\       "syntax": "markdown",
+\       "ext": ".md",
+\       "auto_diary_index": 1,
+\       "diary_rel_path": ".",
+\       "diary_index": "diary",
+\       "diary_header": "Diary",
+\       "auto_tags": 1,
+\       "auto_generate_tags": 1,
+\   },
+\ ]
+
