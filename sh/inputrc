@@ -1,0 +1,6 @@
+# respect default shortcuts
+$include /etc/inputrc
+
+# up-arrow completion like ohmyzsh
+"\e[A":history-search-backward
+"\e[B":history-search-forward

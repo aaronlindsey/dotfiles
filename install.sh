@@ -10,6 +10,7 @@ DOTFILES=(
     git/gitconfig
     idea/ideavimrc
     sh/aliases
+    sh/inputrc
     sh/zshrc
     tmux/tmux.conf
     vim/gvimrc
