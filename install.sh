@@ -12,6 +12,7 @@ DOTFILES=(
     sh/aliases
     sh/inputrc
     sh/zshrc
+    tmux/tmux
     tmux/tmux.conf
     vim/gvimrc
     vim/vim
