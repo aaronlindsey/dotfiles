@@ -85,3 +85,17 @@ let g:vimwiki_list = [
 \   },
 \ ]
 
+" YouCompleteMe settings
+" let clangd fully control code completion
+let g:ycm_clangd_uses_ycmd_caching = 0
+" use installed clangd, not YCM-bundled clangd which doesn't get updates
+let g:ycm_clangd_binary_path = exepath("clangd")
+" shortcuts
+nnoremap <leader>g :YcmCompleter GoTo<CR>
+nnoremap <leader>fr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>fc :YcmCompleter GoToCallers<CR>
+nnoremap <leader>fs <Plug>(YCMFindSymbolInWorkspace)
+nnoremap <leader>fds <Plug>(YCMFindSymbolInDocument)
+
+" fzf settings
+nnoremap <leader>ff :FZF<CR>

@@ -1,9 +1,18 @@
+[submodule "tmux/tmux/plugins/tmux-yank"]
+	path = tmux/tmux/plugins/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank.git
+[submodule "tmux/tmux/plugins/tmux-sensible"]
+	path = tmux/tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible.git
+[submodule "tmux/tmux/plugins/tmux-resurrect"]
+	path = tmux/tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect.git
+[submodule "tmux/tmux/plugins/tmux-continuum"]
+	path = tmux/tmux/plugins/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum.git
 [submodule "vim/vim/pack/plugins/start/vim-dim"]
 	path = vim/vim/pack/plugins/start/vim-dim
 	url = https://github.com/jeffkreeftmeijer/vim-dim.git
-[submodule "vim/vim/pack/plugins/start/vimwiki"]
-	path = vim/vim/pack/plugins/start/vimwiki
-	url = https://github.com/vimwiki/vimwiki.git
 [submodule "vim/vim/pack/plugins/start/vim-vinegar"]
 	path = vim/vim/pack/plugins/start/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
@@ -22,15 +31,3 @@
 [submodule "vim/vim/pack/plugins/start/vim-fugitive"]
 	path = vim/vim/pack/plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "tmux/tmux/plugins/tmux-yank"]
-	path = tmux/tmux/plugins/tmux-yank
-	url = https://github.com/tmux-plugins/tmux-yank.git
-[submodule "tmux/tmux/plugins/tmux-sensible"]
-	path = tmux/tmux/plugins/tmux-sensible
-	url = https://github.com/tmux-plugins/tmux-sensible.git
-[submodule "tmux/tmux/plugins/tmux-resurrect"]
-	path = tmux/tmux/plugins/tmux-resurrect
-	url = https://github.com/tmux-plugins/tmux-resurrect.git
-[submodule "tmux/tmux/plugins/tmux-continuum"]
-	path = tmux/tmux/plugins/tmux-continuum
-	url = https://github.com/tmux-plugins/tmux-continuum.git
