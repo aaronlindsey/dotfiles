@@ -9,6 +9,7 @@
 [diff]
 	renames = true
 	indentHeuristic = on
+	algorithm = histogram
 [status]
 	showUntrackedFiles = all
 [branch]
@@ -78,3 +79,12 @@
 	clean = git-lfs clean -- %f
 [fetch]
 	prune = true
+	fsckobjects = true
+[commit]
+	verbose = true
+[init]
+	defaultBranch = main
+[transfer]
+	fsckobjects = true
+[receive]
+	fsckobjects = true
