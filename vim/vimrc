@@ -98,4 +98,7 @@ nnoremap <leader>fs <Plug>(YCMFindSymbolInWorkspace)
 nnoremap <leader>fds <Plug>(YCMFindSymbolInDocument)
 
 " fzf settings
+if isdirectory("/opt/homebrew/opt/fzf") 
+    set rtp+=/opt/homebrew/opt/fzf
+endif 
 nnoremap <leader>ff :FZF<CR>

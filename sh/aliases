@@ -1,1 +1,32 @@
 alias dco="docker compose"
+alias k="kubectl"
+
+function v() {
+    if [ $# -eq 0 ]; then
+        vim $(fzf)
+    else
+        vim "$@"
+    fi
+}
+
+function upfind() {
+  dir="$(pwd)"
+  while [ "$dir" != "/" ]; do
+    p=$(find "$dir" -maxdepth 1 -name $1)
+    if [ ! -z $p ]; then
+      echo "$p"
+      return
+    fi
+    dir=$(dirname "$dir")
+  done
+}
+
+function gw() {
+  GW="$(upfind gradlew)"
+  if [ -z "$GW" ]; then
+    echo "Gradle wrapper not found."
+  else
+    $GW --configure-on-demand --parallel --profile $@
+  fi
+}
+
