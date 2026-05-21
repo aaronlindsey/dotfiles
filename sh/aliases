@@ -1,5 +1,6 @@
 alias dco="docker compose"
 alias k="kubectl"
+alias cl="caffeinate -i claude --allow-dangerously-skip-permissions"
 
 function v() {
     if [ $# -eq 0 ]; then

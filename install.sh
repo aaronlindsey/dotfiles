@@ -5,7 +5,7 @@ set -o errexit -o pipefail -o nounset
 # Uncomment this line for debugging
 # set -o xtrace
 
-# List of config files to install in ${HOME}
+# List of config files to install in ~/
 DOTFILES=(
     git/gitconfig
     idea/ideavimrc
@@ -18,6 +18,14 @@ DOTFILES=(
     vim/vim
     vim/vimrc
 )
+
+# List of directories to symlink under ~/.config
+CONFIG_DIRS=(
+    config/ghostty
+)
+
+# Path to AGENTS.md
+AGENTS_MD=agents/AGENTS.md
 
 safe_symlink() {
     local source=${1}
@@ -68,6 +76,11 @@ main() {
         local target=${HOME}/.$(basename "${path}")
         safe_symlink "${path}" "${target}" "${force}"
     done
+    for path in "${CONFIG_DIRS[@]}"; do
+        local target=${HOME}/.config/$(basename "${path}")
+        safe_symlink "${path}" "${target}" "${force}"
+    done
+    safe_symlink "${AGENTS_MD}" "${HOME}/AGENTS.md" "${force}"
 }
 
 main $@
