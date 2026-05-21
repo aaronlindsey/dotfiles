@@ -27,10 +27,12 @@ CONFIG_DIRS=(
 # Path to AGENTS.md
 AGENTS_MD=agents/AGENTS.md
 
+# Whether to force overwrite existing files
+FORCE=false
+
 safe_symlink() {
     local source=${1}
     local target=${2}
-    local force=${3}
 
     if [ ! -e "${source}" ]; then
         echo "Error: ${source} not found"
@@ -40,7 +42,7 @@ safe_symlink() {
     # find absolute path to source
     local source=$(cd "$(dirname "${source}")" && pwd)/$(basename "${source}")
 
-    if [ -e "${target}" ] && ! "${force}"; then
+    if [ -e "${target}" ] && ! "${FORCE}"; then
         ls -al "${target}"
         printf "Warning: ${target} already exists. Are you sure you want to overwrite it? [Y/n] "
         read opt
@@ -61,10 +63,9 @@ safe_symlink() {
 }
 
 main() {
-    local force=false
     if [ $# -gt 0 ]; then
         if [ "$1" = "-f" ]; then
-            force=true
+            FORCE=true
         else
             echo "Usage: $0 [-f]" >&2
             exit 1
@@ -72,15 +73,20 @@ main() {
     fi
 
     local path
+
     for path in "${DOTFILES[@]}"; do
         local target=${HOME}/.$(basename "${path}")
-        safe_symlink "${path}" "${target}" "${force}"
+        safe_symlink "${path}" "${target}"
     done
+
     for path in "${CONFIG_DIRS[@]}"; do
         local target=${HOME}/.config/$(basename "${path}")
-        safe_symlink "${path}" "${target}" "${force}"
+        safe_symlink "${path}" "${target}"
     done
-    safe_symlink "${AGENTS_MD}" "${HOME}/AGENTS.md" "${force}"
+
+    mkdir -p "${HOME}/.codex" "${HOME}/.claude"
+    safe_symlink "${AGENTS_MD}" "${HOME}/.codex/AGENTS.md"
+    safe_symlink "${AGENTS_MD}" "${HOME}/.claude/CLAUDE.md"
 }
 
 main $@
